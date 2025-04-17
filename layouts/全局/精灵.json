@@ -19,6 +19,11 @@
 					"sid": 663191549955749,
 					"tags": "",
 					"instanceVariables": {
+						"z_": 0,
+						"y_": 0,
+						"height_": 0,
+						"width_": 0,
+						"Layer": "",
 						"ThisY": 0,
 						"ID": 0,
 						"Name": "",
@@ -71,6 +76,316 @@
 							}
 						}
 					},
+					"template": {
+						"mode": "template",
+						"templateName": "main",
+						"sourceTemplateName": "",
+						"replicaHierarchyInSyncWithTemplate": false,
+						"templatePropagateHierarchyChanges": true,
+						"replicaIgnoreTemplateHierarchyChanges": false,
+						"components": [
+							{
+								"id": "plugin",
+								"component": [
+									{
+										"key": "plugin",
+										"state": [
+											[
+												"initially-visible",
+												true
+											],
+											[
+												"initial-animation",
+												true
+											],
+											[
+												"initial-frame",
+												true
+											],
+											[
+												"enable-collisions",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "instance-variable",
+								"component": [
+									{
+										"key": "instance-variable",
+										"state": [
+											{
+												"iv": "ThisY",
+												"state": true
+											},
+											{
+												"iv": "ID",
+												"state": true
+											},
+											{
+												"iv": "Name",
+												"state": true
+											},
+											{
+												"iv": "HP",
+												"state": true
+											},
+											{
+												"iv": "Speed",
+												"state": true
+											},
+											{
+												"iv": "EX",
+												"state": true
+											},
+											{
+												"iv": "IDstring",
+												"state": true
+											},
+											{
+												"iv": "z_",
+												"state": true
+											},
+											{
+												"iv": "y_",
+												"state": true
+											},
+											{
+												"iv": "height_",
+												"state": true
+											},
+											{
+												"iv": "width_",
+												"state": true
+											},
+											{
+												"iv": "Layer",
+												"state": true
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "behavior",
+								"component": [
+									{
+										"key": "8方向",
+										"state": [
+											[
+												"max-speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"deceleration",
+												true
+											],
+											[
+												"directions",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"allow-sliding",
+												true
+											],
+											[
+												"default-controls",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "视野跟随",
+										"state": [
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "移动到",
+										"state": [
+											[
+												"max-speed",
+												true
+											],
+											[
+												"acceleration",
+												true
+											],
+											[
+												"deceleration",
+												true
+											],
+											[
+												"rotate-speed",
+												true
+											],
+											[
+												"set-angle",
+												true
+											],
+											[
+												"stop-on-solids",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "MoveSine",
+										"state": [
+											[
+												"movement",
+												true
+											],
+											[
+												"wave",
+												true
+											],
+											[
+												"period",
+												true
+											],
+											[
+												"period-random",
+												true
+											],
+											[
+												"period-offset",
+												true
+											],
+											[
+												"period-offset-random",
+												true
+											],
+											[
+												"magnitude",
+												true
+											],
+											[
+												"magnitude-random",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "effect",
+								"component": []
+							},
+							{
+								"id": "world-instance",
+								"component": [
+									{
+										"key": "world-instance",
+										"state": [
+											[
+												"x",
+												false
+											],
+											[
+												"y",
+												false
+											],
+											[
+												"z",
+												true
+											],
+											[
+												"w",
+												true
+											],
+											[
+												"h",
+												true
+											],
+											[
+												"a",
+												true
+											],
+											[
+												"o",
+												true
+											],
+											[
+												"c",
+												true
+											],
+											[
+												"sx",
+												true
+											],
+											[
+												"sy",
+												true
+											],
+											[
+												"bm",
+												true
+											],
+											[
+												"twpx",
+												true
+											],
+											[
+												"twpy",
+												true
+											],
+											[
+												"twpz",
+												true
+											],
+											[
+												"twpw",
+												true
+											],
+											[
+												"twph",
+												true
+											],
+											[
+												"twpa",
+												true
+											],
+											[
+												"dwp",
+												true
+											],
+											[
+												"ssm",
+												true
+											]
+										]
+									}
+								]
+							}
+						],
+						"replicasUIDs": null
+					},
 					"sceneGraphData": {
 						"parent-uid": null,
 						"uid": 2,
@@ -119,10 +434,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 71,
-						"y": 116,
-						"width": 47.08355613402106,
-						"height": 72.92641025269427,
+						"x": 73,
+						"y": 388,
+						"width": 138.06977688506217,
+						"height": 336.3614777306302,
 						"originX": 0.5263157894736842,
 						"originY": 0.9854368932038835,
 						"color": [
@@ -147,7 +462,13 @@
 					"uid": 3,
 					"sid": 380459538299804,
 					"tags": "",
-					"instanceVariables": {},
+					"instanceVariables": {
+						"z_": 0,
+						"y_": 0,
+						"height_": 0,
+						"width_": 0,
+						"Layer": ""
+					},
 					"behaviors": {
 						"实体": {
 							"properties": {
@@ -575,125 +896,6 @@
 						"height": 67,
 						"originX": 0,
 						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "Player",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 15,
-					"sid": 978073571741368,
-					"tags": "",
-					"instanceVariables": {
-						"ThisY": 0,
-						"ID": 0,
-						"Name": "",
-						"HP": 0,
-						"Speed": 0,
-						"EX": 0,
-						"IDstring": ""
-					},
-					"behaviors": {
-						"8方向": {
-							"properties": {
-								"max-speed": 200,
-								"acceleration": 600,
-								"deceleration": 500,
-								"directions": "dir-8",
-								"set-angle": "no",
-								"allow-sliding": true,
-								"default-controls": true,
-								"enabled": true
-							}
-						},
-						"视野跟随": {
-							"properties": {
-								"enabled": true
-							}
-						},
-						"移动到": {
-							"properties": {
-								"max-speed": 200,
-								"acceleration": 600,
-								"deceleration": 600,
-								"rotate-speed": 0,
-								"set-angle": false,
-								"stop-on-solids": false,
-								"enabled": true
-							}
-						},
-						"MoveSine": {
-							"properties": {
-								"movement": "angle",
-								"wave": "sine",
-								"period": 0.5,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 15,
-								"magnitude-random": 0,
-								"enabled": false,
-								"live-preview": false
-							}
-						}
-					},
-					"sceneGraphData": {
-						"parent-uid": null,
-						"uid": 15,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"o": false,
-							"v": false,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"transformO": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 978073571741368,
-						"expanded": true,
-						"folderName": "",
-						"indexInFolder": -1,
-						"folderNestingLevel": -1
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 161,
-						"y": 380,
-						"width": 47.08355613402106,
-						"height": 72.92641025269427,
-						"originX": 0.5263157894736842,
-						"originY": 0.9854368932038835,
 						"color": [
 							1,
 							1,

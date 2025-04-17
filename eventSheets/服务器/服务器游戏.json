@@ -251,6 +251,81 @@
 									}
 								},
 								{
+									"id": "sync-instance-variable",
+									"objectClass": "Mul",
+									"sid": 518732115810128,
+									"parameters": {
+										"object": "F_Sync",
+										"instance-variable": {
+											"name": "z_",
+											"objectClass": "F_Sync"
+										},
+										"precision": "normal-float-4-bytes",
+										"interpolation": "none",
+										"client-value-tag": "\"\""
+									}
+								},
+								{
+									"id": "sync-instance-variable",
+									"objectClass": "Mul",
+									"sid": 669650707588485,
+									"parameters": {
+										"object": "F_Sync",
+										"instance-variable": {
+											"name": "y_",
+											"objectClass": "F_Sync"
+										},
+										"precision": "normal-float-4-bytes",
+										"interpolation": "none",
+										"client-value-tag": "\"\""
+									}
+								},
+								{
+									"id": "sync-instance-variable",
+									"objectClass": "Mul",
+									"sid": 987237173325761,
+									"parameters": {
+										"object": "F_Sync",
+										"instance-variable": {
+											"name": "Layer",
+											"objectClass": "F_Sync"
+										},
+										"precision": "normal-float-4-bytes",
+										"interpolation": "none",
+										"client-value-tag": "\"\""
+									}
+								},
+								{
+									"id": "sync-instance-variable",
+									"objectClass": "Mul",
+									"sid": 459881394203352,
+									"parameters": {
+										"object": "F_Sync",
+										"instance-variable": {
+											"name": "height_",
+											"objectClass": "F_Sync"
+										},
+										"precision": "normal-float-4-bytes",
+										"interpolation": "none",
+										"client-value-tag": "\"\""
+									}
+								},
+								{
+									"id": "sync-instance-variable",
+									"objectClass": "Mul",
+									"sid": 718371289285205,
+									"parameters": {
+										"object": "F_Sync",
+										"instance-variable": {
+											"name": "width_",
+											"objectClass": "F_Sync"
+										},
+										"precision": "normal-float-4-bytes",
+										"interpolation": "none",
+										"client-value-tag": "\"\""
+									}
+								},
+								{
 									"id": "sync-object",
 									"objectClass": "Mul",
 									"sid": 927546421688885,
@@ -402,6 +477,87 @@
 				{
 					"eventType": "group",
 					"disabled": false,
+					"title": "ServerUpdate",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 628913988790386
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "F_Sync",
+									"sid": 217002046241504,
+									"parameters": {
+										"instance-variable": "z_",
+										"value": "Self.ZIndex"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "F_Sync",
+									"sid": 750496317746258,
+									"parameters": {
+										"instance-variable": "y_",
+										"value": "Self.Y"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "F_Sync",
+									"sid": 930314806183289,
+									"parameters": {
+										"instance-variable": "Layer",
+										"value": "Self.LayerName"
+									}
+								}
+							],
+							"sid": 522611240893079
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "F_Sync",
+									"sid": 890986774981848
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "F_Sync",
+									"sid": 640489350496173,
+									"parameters": {
+										"instance-variable": "height_",
+										"value": "Self.Height"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "F_Sync",
+									"sid": 212910614634961,
+									"parameters": {
+										"instance-variable": "width_",
+										"value": "Self.Width"
+									}
+								}
+							],
+							"sid": 165593733801609
+						}
+					],
+					"sid": 879775201193571
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
 					"title": "ServerChat",
 					"description": "",
 					"isActiveOnStart": true,
@@ -539,14 +695,14 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 805051312081359,
+									"sid": 305842756075329,
 									"parameters": {
 										"object-to-create": "Player",
 										"layer": "\"实体\"",
 										"x": "9801",
 										"y": "2661",
 										"create-hierarchy": true,
-										"template-name": "\"默认\""
+										"template-name": "\"main\""
 									}
 								},
 								{

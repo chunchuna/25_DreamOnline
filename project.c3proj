@@ -100,21 +100,18 @@
 	],
 	"uniqueId": "d3njncvcwix",
 	"objectTypes": {
-		"items": [
-			"EventHandler"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
 					"Player",
 					"Wall",
-					"image",
-					"image2",
 					"ground",
 					"groundput",
 					"PhotoBoxImage",
 					"WallIamge",
-					"WallImagePut"
+					"WallImagePut",
+					"EventHandler"
 				],
 				"subfolders": [],
 				"name": "Sprites"
@@ -148,7 +145,12 @@
 					"bda0bfe9fa9745509f7535b75e0f",
 					"c0b3810d6a29ac8a",
 					"e8df7736d914b35b13e6ae526470cd",
-					"fe79c8ea624a37a4b91a01d018be"
+					"fe79c8ea624a37a4b91a01d018be",
+					"image2",
+					"image",
+					"Img_Furnish_WallpaperItem",
+					"Img_Furnish_CabinetItem",
+					"Img_Furnish_WindowItem"
 				],
 				"subfolders": [],
 				"name": "photo"
@@ -165,7 +167,6 @@
 			"F_Syncput",
 			"F_SyncText",
 			"F_Ysort",
-			"F_Photo",
 			"F_UI",
 			"F_UIText"
 		],

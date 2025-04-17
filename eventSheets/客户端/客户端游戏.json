@@ -141,6 +141,80 @@
 				{
 					"eventType": "group",
 					"disabled": false,
+					"title": "ClientUpdate",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 747336706657328
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"language": "typescript",
+									"script": [
+										"for(let SyncObjects of runtime.objects.F_Sync.instances()){",
+										"  SyncObjects.zElevation=SyncObjects.instVars.z_;",
+										"  console.log(SyncObjects+\",\"+SyncObjects.layer)",
+										"}"
+									],
+									"disabled": true
+								}
+							],
+							"sid": 311926894271776
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "F_Sync",
+									"sid": 974502051088151
+								}
+							],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "F_Sync",
+									"sid": 598989857938538,
+									"parameters": {
+										"width": "Self.width_",
+										"height": "Self.height_"
+									}
+								},
+								{
+									"id": "move-to-layer",
+									"objectClass": "F_Sync",
+									"sid": 525358732955127,
+									"parameters": {
+										"layer": "Self.Layer"
+									}
+								},
+								{
+									"type": "script",
+									"language": "typescript",
+									"script": [
+										"for(let SyncObjects of runtime.objects.F_Sync.instances()){",
+										"  SyncObjects.zElevation=SyncObjects.instVars.z_;",
+										"  console.log(SyncObjects)",
+										"}"
+									]
+								}
+							],
+							"sid": 124433215155000
+						}
+					],
+					"sid": 366322404497195
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
 					"title": "ClientChat",
 					"description": "",
 					"isActiveOnStart": true,
@@ -621,26 +695,7 @@
 											"sid": 996220865856852
 										}
 									],
-									"actions": [
-										{
-											"id": "move-to-object",
-											"objectClass": "F_Photo",
-											"sid": 252095810286390,
-											"parameters": {
-												"where": "behind",
-												"object": "PhotoBoxImage"
-											}
-										},
-										{
-											"id": "move-to-object",
-											"objectClass": "F_Photo",
-											"sid": 476453351279895,
-											"parameters": {
-												"where": "in-front",
-												"object": "WallImagePut"
-											}
-										}
-									],
+									"actions": [],
 									"sid": 235405072902579
 								},
 								{

@@ -2,7 +2,22 @@
 	"name": "F_Syncput",
 	"plugin-id": "TiledBg",
 	"sid": 270079890993942,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "Layer_",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 430924856981671
+		},
+		{
+			"name": "z_",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 906651554531670
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [

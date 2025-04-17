@@ -1,0 +1,20 @@
+{
+	"name": "F_Sync",
+	"plugin-id": "Sprite",
+	"sid": 393879216569355,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Wall",
+		"image",
+		"image2",
+		"Player",
+		"PhotoBoxImage",
+		"fe79c8ea624a37a4b91a01d018be",
+		"e8df7736d914b35b13e6ae526470cd",
+		"c0b3810d6a29ac8a",
+		"bda0bfe9fa9745509f7535b75e0f",
+		"a15b7adec95423a98d29ae039fb9e1d"
+	]
+}

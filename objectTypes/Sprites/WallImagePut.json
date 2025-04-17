@@ -1,0 +1,29 @@
+{
+	"name": "WallImagePut",
+	"plugin-id": "TiledBg",
+	"sid": 393977622699528,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "实体",
+			"sid": 347554636337769
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 1920,
+		"height": 1200,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 3379125,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

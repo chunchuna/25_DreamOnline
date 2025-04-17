@@ -1,0 +1,23 @@
+{
+	"name": "groundput",
+	"plugin-id": "TiledBg",
+	"sid": 752478861223951,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 1597,
+		"height": 2290,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 1104015,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

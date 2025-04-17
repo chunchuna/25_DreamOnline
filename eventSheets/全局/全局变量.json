@@ -1,0 +1,88 @@
+{
+	"name": "全局变量",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "服务器"
+		},
+		{
+			"eventType": "variable",
+			"name": "变量_玩家名称",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 145239336315452
+		},
+		{
+			"eventType": "variable",
+			"name": "SERVER_INSTANCE",
+			"type": "string",
+			"initialValue": "chunchun-server",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 686566406258705
+		},
+		{
+			"eventType": "variable",
+			"name": "SERVER_GAME",
+			"type": "string",
+			"initialValue": "game",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 183833121517340
+		},
+		{
+			"eventType": "variable",
+			"name": "GAME_RUN_TYPE",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 729863572169961
+		},
+		{
+			"eventType": "variable",
+			"name": "SERVER_ROOM",
+			"type": "string",
+			"initialValue": "room",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 144059256430859
+		},
+		{
+			"eventType": "comment",
+			"text": "玩家"
+		},
+		{
+			"eventType": "variable",
+			"name": "Player_MoveSpeed",
+			"type": "number",
+			"initialValue": "20",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 691790401458982
+		},
+		{
+			"eventType": "comment",
+			"text": "/引擎"
+		},
+		{
+			"eventType": "variable",
+			"name": "GameType",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 309326364076308
+		}
+	],
+	"sid": 751524280788527
+}

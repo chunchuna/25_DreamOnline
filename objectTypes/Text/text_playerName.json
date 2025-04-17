@@ -1,0 +1,25 @@
+{
+	"name": "text_playerName",
+	"plugin-id": "Text",
+	"sid": 650242649288017,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "IDstring",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 565263505869311
+		},
+		{
+			"name": "ID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 596145921492650
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

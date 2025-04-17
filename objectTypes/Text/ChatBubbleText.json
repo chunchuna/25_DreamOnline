@@ -1,0 +1,10 @@
+{
+	"name": "ChatBubbleText",
+	"plugin-id": "Text",
+	"sid": 134105573023432,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

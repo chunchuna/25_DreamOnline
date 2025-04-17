@@ -1,0 +1,113 @@
+{
+	"name": "客户端登陆",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "&&登陆",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-clicked",
+							"objectClass": "UI_登陆按钮",
+							"sid": 793453134672250
+						}
+					],
+					"actions": [],
+					"sid": 464843183735775,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UI_登陆按钮",
+									"sid": 764554939225075,
+									"parameters": {
+										"instance-variable": "ID",
+										"comparison": 0,
+										"value": "\"主持\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 116222279386925,
+									"parameters": {
+										"layout": "服务器游戏场景"
+									}
+								}
+							],
+							"sid": 877738125184959
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UI_登陆按钮",
+									"sid": 310229762077267,
+									"parameters": {
+										"instance-variable": "ID",
+										"comparison": 0,
+										"value": "\"连接\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 169942394401728,
+									"parameters": {
+										"layout": "客户端游戏场景"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 944967344354691,
+									"parameters": {
+										"variable": "变量_玩家名称",
+										"value": "NameLable.Text"
+									}
+								}
+							],
+							"sid": 629753320944507
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 516999580921150
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 268534375357951,
+							"parameters": {
+								"variable": "变量_玩家名称",
+								"value": "\"Player\"&str(int(random(0,1999)))"
+							}
+						}
+					],
+					"sid": 215237892828835
+				}
+			],
+			"sid": 438378619812399
+		}
+	],
+	"sid": 584555619973339
+}

@@ -1,0 +1,11 @@
+{
+	"name": "F_World",
+	"plugin-id": "Sprite",
+	"sid": 652605902191318,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Wall"
+	]
+}

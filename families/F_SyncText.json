@@ -1,0 +1,11 @@
+{
+	"name": "F_SyncText",
+	"plugin-id": "Text",
+	"sid": 219541750450370,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"text_playerName"
+	]
+}

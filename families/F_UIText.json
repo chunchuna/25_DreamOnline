@@ -1,0 +1,11 @@
+{
+	"name": "F_UIText",
+	"plugin-id": "Text",
+	"sid": 737420981062878,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"ChatBubbleText"
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"name": "UI_登陆按钮",
+	"plugin-id": "Button",
+	"sid": 683811962617332,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "ID",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 500595044227379
+		}
+	],
+	"behaviorTypes": []
+}

@@ -1,0 +1,11 @@
+{
+	"name": "F_Body",
+	"plugin-id": "Sprite",
+	"sid": 621778925382193,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Player"
+	]
+}

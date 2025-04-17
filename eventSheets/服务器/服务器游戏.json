@@ -1,0 +1,1009 @@
+{
+	"name": "服务器游戏",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ServerInit",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ServerDO",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 981227851844137
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "函数_服务器配置",
+									"sid": 515549717303512
+								},
+								{
+									"callFunction": "函数_同步对象",
+									"sid": 705563090406131
+								},
+								{
+									"callFunction": "函数_同步标签",
+									"sid": 317591420043908
+								},
+								{
+									"callFunction": "函数_连接服务器",
+									"sid": 370768559780222
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 680139638224857,
+									"parameters": {
+										"variable": "GAME_RUN_TYPE",
+										"value": "\"SERVER\""
+									}
+								}
+							],
+							"sid": 343039154741110
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-connected",
+									"objectClass": "Mul",
+									"sid": 350816327476949
+								}
+							],
+							"actions": [
+								{
+									"id": "log-in",
+									"objectClass": "Mul",
+									"sid": 370423403358769,
+									"parameters": {
+										"alias": "\"Server\""
+									}
+								}
+							],
+							"sid": 398400653441296
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-logged-in",
+									"objectClass": "Mul",
+									"sid": 114300421991434
+								}
+							],
+							"actions": [
+								{
+									"id": "join-room",
+									"objectClass": "Mul",
+									"sid": 275221753090981,
+									"parameters": {
+										"game": "SERVER_GAME",
+										"instance": "SERVER_INSTANCE",
+										"room": "SERVER_ROOM",
+										"max-peers": "30"
+									}
+								}
+							],
+							"sid": 820361988827217
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-joined-room",
+									"objectClass": "Mul",
+									"sid": 814023583320202
+								}
+							],
+							"actions": [],
+							"sid": 981556974805437,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-host",
+											"objectClass": "Mul",
+											"sid": 395014176048180
+										}
+									],
+									"actions": [
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 700693876336281,
+											"parameters": {
+												"group-name": "\"ServerHost\"",
+												"state": "activated"
+											}
+										}
+									],
+									"sid": 605571769912147
+								}
+							]
+						}
+					],
+					"sid": 260978554108204
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ServerFunction",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "函数_服务器配置",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-bandwidth-profile",
+									"objectClass": "Mul",
+									"sid": 359302433028328,
+									"parameters": {
+										"profile": "lan-60-hz-updates-40ms-buffer"
+									}
+								}
+							],
+							"sid": 340602832970557
+						},
+						{
+							"functionName": "函数_同步对象",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "sync-object",
+									"objectClass": "Mul",
+									"sid": 751601715380231,
+									"parameters": {
+										"object": "F_Sync",
+										"data": "position-and-angle",
+										"precision": "normal-float-4-bytes",
+										"bandwidth": "normal-bandwidth-unpredictable"
+									}
+								},
+								{
+									"id": "sync-object",
+									"objectClass": "Mul",
+									"sid": 927546421688885,
+									"parameters": {
+										"object": "F_Syncput",
+										"data": "position-and-angle",
+										"precision": "normal-float-4-bytes",
+										"bandwidth": "normal-bandwidth-unpredictable"
+									}
+								},
+								{
+									"id": "sync-object",
+									"objectClass": "Mul",
+									"sid": 151059809960669,
+									"parameters": {
+										"object": "F_SyncText",
+										"data": "position-only",
+										"precision": "normal-float-4-bytes",
+										"bandwidth": "normal-bandwidth-unpredictable"
+									}
+								},
+								{
+									"id": "sync-object",
+									"objectClass": "Mul",
+									"sid": 355712686448960,
+									"disabled": true,
+									"parameters": {
+										"object": "Wall",
+										"data": "position-and-angle",
+										"precision": "normal-float-4-bytes",
+										"bandwidth": "normal-bandwidth-unpredictable"
+									}
+								},
+								{
+									"id": "sync-object",
+									"objectClass": "Mul",
+									"sid": 137004799219704,
+									"disabled": true,
+									"parameters": {
+										"object": "Player",
+										"data": "position-only",
+										"precision": "normal-float-4-bytes",
+										"bandwidth": "normal-bandwidth-unpredictable"
+									}
+								},
+								{
+									"id": "sync-object",
+									"objectClass": "Mul",
+									"sid": 311557768396330,
+									"disabled": true,
+									"parameters": {
+										"object": "text_playerName",
+										"data": "position-only",
+										"precision": "normal-float-4-bytes",
+										"bandwidth": "normal-bandwidth-unpredictable"
+									}
+								}
+							],
+							"sid": 829648762848907
+						},
+						{
+							"functionName": "函数_同步标签",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 638023743017321
+						},
+						{
+							"functionName": "函数_连接服务器",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "connect",
+									"objectClass": "Mul",
+									"sid": 380856638757867,
+									"parameters": {
+										"server": "\"wss://multiplayer.construct.net\""
+									}
+								}
+							],
+							"sid": 588774556257913
+						},
+						{
+							"functionName": "func_clearAllCameraLockPlayer",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 988660169719958,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 847343073255077,
+											"parameters": {
+												"object": "Player"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-enabled",
+											"objectClass": "Player",
+											"sid": 315253721268706,
+											"behaviorType": "视野跟随",
+											"parameters": {
+												"state": "disabled"
+											}
+										}
+									],
+									"sid": 700660961393310
+								}
+							]
+						}
+					],
+					"sid": 404588389641778
+				}
+			],
+			"sid": 939709714774824
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ServerHost",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ServerChat",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "ChatBoxFunc",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"functionName": "PutMesBubble",
+									"functionDescription": "",
+									"functionCategory": "",
+									"functionReturnType": "none",
+									"functionCopyPicked": false,
+									"functionIsAsync": false,
+									"functionParameters": [
+										{
+											"name": "MesString",
+											"type": "string",
+											"initialValue": "",
+											"comment": "",
+											"sid": 402887761148104
+										},
+										{
+											"name": "Posx",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"sid": 298774183503061
+										},
+										{
+											"name": "Posy",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"sid": 244968364202762
+										}
+									],
+									"eventType": "function-block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 591701087531117,
+											"parameters": {
+												"object-to-create": "ChatBubble",
+												"layer": "0",
+												"x": "Posx",
+												"y": "Posy",
+												"create-hierarchy": true,
+												"template-name": "\"chat\""
+											}
+										}
+									],
+									"sid": 436912591866343,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-children",
+													"objectClass": "ChatBubble",
+													"sid": 362880852746770,
+													"parameters": {
+														"child": "ChatBubbleText",
+														"which": "own"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "typewriter-text",
+													"objectClass": "ChatBubbleText",
+													"sid": 744523874512785,
+													"parameters": {
+														"text": "MesString",
+														"duration": "1.5"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 199736726328034,
+													"parameters": {
+														"seconds": "5",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "destroy",
+													"objectClass": "ChatBubble",
+													"sid": 813136896233175
+												}
+											],
+											"sid": 286539504077657
+										}
+									]
+								}
+							],
+							"sid": 123278625895578
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "ChatboxHandler",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [],
+							"sid": 706323558269881
+						}
+					],
+					"sid": 570578630878858
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ServerPeerEnter",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-peer-connected",
+									"objectClass": "Mul",
+									"sid": 755338007032256
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 805051312081359,
+									"parameters": {
+										"object-to-create": "Player",
+										"layer": "\"实体\"",
+										"x": "9801",
+										"y": "2661",
+										"create-hierarchy": true,
+										"template-name": "\"默认\""
+									}
+								},
+								{
+									"id": "associate-object-with-peer",
+									"objectClass": "Mul",
+									"sid": 336461381818917,
+									"parameters": {
+										"object": "Player",
+										"peer-id": "Mul.PeerID"
+									}
+								},
+								{
+									"id": "associate-object-with-peer",
+									"objectClass": "Mul",
+									"sid": 992681878278161,
+									"parameters": {
+										"object": "text_playerName",
+										"peer-id": "Mul.PeerID"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player",
+									"sid": 428020284175790,
+									"parameters": {
+										"instance-variable": "IDstring",
+										"value": "Mul.PeerID"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player",
+									"sid": 740089221725953,
+									"parameters": {
+										"instance-variable": "Name",
+										"value": "Mul.PeerAlias"
+									}
+								},
+								{
+									"id": "set-ignoring-input",
+									"objectClass": "Player",
+									"sid": 384005674903224,
+									"behaviorType": "8方向",
+									"parameters": {
+										"input": "start-ignoring"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Player",
+									"sid": 784079861073574,
+									"behaviorType": "视野跟随",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 794651622956490
+								}
+							],
+							"sid": 346162495916178
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "text_playerName",
+									"sid": 859828981697302
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "text_playerName",
+									"sid": 643260063310229,
+									"parameters": {
+										"text": "Mul.PeerAlias"
+									}
+								}
+							],
+							"sid": 432188221958812
+						}
+					],
+					"sid": 323443856586634
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ServerHandler",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "ServerBascal",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-peer-message",
+											"objectClass": "Mul",
+											"sid": 548396450440295,
+											"parameters": {
+												"tag": "\"player:move:left\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 388186853158745,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for-each",
+													"objectClass": "System",
+													"sid": 379276276665900,
+													"parameters": {
+														"object": "Player"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 252027551756334,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-comparison",
+															"objectClass": "System",
+															"sid": 354188383039878,
+															"parameters": {
+																"object": "Player",
+																"expression": "Player.IDstring",
+																"comparison": 0,
+																"value": "Mul.FromID"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "move-to-position",
+															"objectClass": "Player",
+															"sid": 542251196900942,
+															"behaviorType": "移动到",
+															"parameters": {
+																"x": "Self.X-Player_MoveSpeed",
+																"y": "Self.y",
+																"mode": "direct"
+															}
+														}
+													],
+													"sid": 129838664860774
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-peer-message",
+											"objectClass": "Mul",
+											"sid": 276411047235847,
+											"parameters": {
+												"tag": "\"player:move:right\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 742829779140483,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for-each",
+													"objectClass": "System",
+													"sid": 166298969485056,
+													"parameters": {
+														"object": "Player"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 924019572098802,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-comparison",
+															"objectClass": "System",
+															"sid": 345490770327503,
+															"parameters": {
+																"object": "Player",
+																"expression": "Player.IDstring",
+																"comparison": 0,
+																"value": "Mul.FromID"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "move-to-position",
+															"objectClass": "Player",
+															"sid": 545451243781680,
+															"behaviorType": "移动到",
+															"parameters": {
+																"x": "Self.X+Player_MoveSpeed",
+																"y": "Self.y",
+																"mode": "direct"
+															}
+														}
+													],
+													"sid": 494111000867556
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-peer-message",
+											"objectClass": "Mul",
+											"sid": 944037238159645,
+											"parameters": {
+												"tag": "\"player:move:up\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 942420185733736,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for-each",
+													"objectClass": "System",
+													"sid": 642737677211190,
+													"parameters": {
+														"object": "Player"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 542384624375042,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-comparison",
+															"objectClass": "System",
+															"sid": 580860262880947,
+															"parameters": {
+																"object": "Player",
+																"expression": "Player.IDstring",
+																"comparison": 0,
+																"value": "Mul.FromID"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "move-to-position",
+															"objectClass": "Player",
+															"sid": 533861439767636,
+															"behaviorType": "移动到",
+															"parameters": {
+																"x": "Self.X",
+																"y": "Self.y-Player_MoveSpeed",
+																"mode": "direct"
+															}
+														}
+													],
+													"sid": 207135472919068
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-peer-message",
+											"objectClass": "Mul",
+											"sid": 634481063256151,
+											"parameters": {
+												"tag": "\"player:move:down\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 272829479165532,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for-each",
+													"objectClass": "System",
+													"sid": 414806372679621,
+													"parameters": {
+														"object": "Player"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 473159071484020,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-comparison",
+															"objectClass": "System",
+															"sid": 684588586995175,
+															"parameters": {
+																"object": "Player",
+																"expression": "Player.IDstring",
+																"comparison": 0,
+																"value": "Mul.FromID"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "move-to-position",
+															"objectClass": "Player",
+															"sid": 717794732261789,
+															"behaviorType": "移动到",
+															"parameters": {
+																"x": "Self.X",
+																"y": "Self.y+Player_MoveSpeed",
+																"mode": "direct"
+															}
+														}
+													],
+													"sid": 719567630060097
+												}
+											]
+										}
+									]
+								}
+							],
+							"sid": 466132752082421
+						}
+					],
+					"sid": 277470920611050
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ServerPlayer",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "Player",
+									"sid": 532743310638778,
+									"behaviorType": "移动到"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-active",
+									"objectClass": "Player",
+									"sid": 261776182694720,
+									"behaviorType": "MoveSine",
+									"parameters": {
+										"state": "active"
+									}
+								}
+							],
+							"sid": 879084288068910
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 628295266767107
+								}
+							],
+							"actions": [
+								{
+									"id": "set-active",
+									"objectClass": "Player",
+									"sid": 837718572405974,
+									"behaviorType": "MoveSine",
+									"parameters": {
+										"state": "inactive"
+									}
+								}
+							],
+							"sid": 894759952207972
+						}
+					],
+					"sid": 808917824384213
+				}
+			],
+			"sid": 966053500224647
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "OnlyServer",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ServerCamera",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 230161554781930,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "Player"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "func_clearAllCameraLockPlayer",
+									"sid": 827485511071241
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Player",
+									"sid": 877048535485312,
+									"behaviorType": "视野跟随",
+									"parameters": {
+										"state": "enabled"
+									}
+								}
+							],
+							"sid": 919495997353768
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 115551312714192,
+									"parameters": {
+										"key": 87
+									}
+								}
+							],
+							"actions": [],
+							"sid": 191117962783401,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-random-instance",
+											"objectClass": "System",
+											"sid": 740137907264236,
+											"parameters": {
+												"object": "Player"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "func_clearAllCameraLockPlayer",
+											"sid": 109812772821122
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "Player",
+											"sid": 248107934544019,
+											"behaviorType": "视野跟随",
+											"parameters": {
+												"state": "enabled"
+											}
+										}
+									],
+									"sid": 473291992806261
+								}
+							]
+						}
+					],
+					"sid": 632962826838154
+				}
+			],
+			"sid": 302587618855832
+		}
+	],
+	"sid": 567670897011832
+}

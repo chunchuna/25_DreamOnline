@@ -1,0 +1,19 @@
+{
+	"name": "F_Ysort",
+	"plugin-id": "Sprite",
+	"sid": 940145677611090,
+	"instanceVariables": [
+		{
+			"name": "ThisY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 945155781525733
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Player"
+	]
+}

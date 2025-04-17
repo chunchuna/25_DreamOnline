@@ -1,0 +1,11 @@
+{
+	"name": "F_UI",
+	"plugin-id": "Sprite",
+	"sid": 828324934937212,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"ChatBubble"
+	]
+}

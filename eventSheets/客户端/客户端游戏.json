@@ -1,0 +1,751 @@
+{
+	"name": "客户端游戏",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ClientInit",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 845833625763939
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "函数_服务器配置",
+							"sid": 994795512454771
+						},
+						{
+							"callFunction": "函数_同步对象",
+							"sid": 494485201044042
+						},
+						{
+							"callFunction": "函数_同步标签",
+							"sid": 509262994291463
+						},
+						{
+							"callFunction": "函数_连接服务器",
+							"sid": 736812703333126
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 654318662657260,
+							"parameters": {
+								"variable": "GAME_RUN_TYPE",
+								"value": "\"CLIENT\""
+							}
+						}
+					],
+					"sid": 791673348593496
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-connected",
+							"objectClass": "Mul",
+							"sid": 126440317742523
+						}
+					],
+					"actions": [
+						{
+							"id": "log-in",
+							"objectClass": "Mul",
+							"sid": 333325745573393,
+							"parameters": {
+								"alias": "变量_玩家名称"
+							}
+						}
+					],
+					"sid": 232704819194101
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-logged-in",
+							"objectClass": "Mul",
+							"sid": 141572447561917
+						}
+					],
+					"actions": [
+						{
+							"id": "join-room",
+							"objectClass": "Mul",
+							"sid": 442016259743925,
+							"parameters": {
+								"game": "SERVER_GAME",
+								"instance": "SERVER_INSTANCE",
+								"room": "SERVER_ROOM",
+								"max-peers": "30"
+							}
+						}
+					],
+					"sid": 315245845331396
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-joined-room",
+							"objectClass": "Mul",
+							"sid": 743806445556871
+						}
+					],
+					"actions": [],
+					"sid": 106632216981336,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-host",
+									"objectClass": "Mul",
+									"sid": 959252278408620,
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 270726933117954,
+									"parameters": {
+										"group-name": "\"ClientHost\"",
+										"state": "activated"
+									}
+								}
+							],
+							"sid": 275695018773291
+						}
+					]
+				}
+			],
+			"sid": 737392972695588
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ClientHost",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ClientChat",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 488907293713886,
+									"parameters": {
+										"key": 13
+									}
+								}
+							],
+							"actions": [],
+							"sid": 548441439111774,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-text",
+											"objectClass": "ClientChatBox",
+											"sid": 813642570145983,
+											"parameters": {
+												"text": "\"\"",
+												"case": "case-insensitive"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"type": "script",
+											"language": "typescript",
+											"script": [
+												"//@ts-ignore",
+												"var messageContent ={id:runtime.objects.Mul.myId,mes:runtime.objects.ClientChatBox.getFirstPickedInstance().text,tag:\"chatbo\"} ",
+												"runtime.objects.Mul.sendPeerMessage(\"\",messageContent)",
+												"//alert(\"发送消息\")"
+											]
+										},
+										{
+											"id": "set-text",
+											"objectClass": "ClientChatBox",
+											"sid": 905421622649700,
+											"parameters": {
+												"text": "\"\""
+											}
+										}
+									],
+									"sid": 613508197268500
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 723019036563937
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"language": "typescript",
+									"script": [
+										"runtime.objects.Mul.addEventListener(\"message\", e => {",
+										"  alert(\"收到消息\")",
+										"  //@ts-ignore",
+										"  if (e.message.tag === \"chatbo\") {",
+										"  //@ts-ignore",
+										"   alert(e.message.whosay+\": \"+e.message.content+e.message.id)",
+										"   for(let players of runtime.objects.Player.instances())",
+										"   {",
+										"\t\t//@ts-ignore",
+										"        if(players.instVars.IDstring==e.message.id)",
+										"        {",
+										"        //@ts-ignore",
+										"        runtime.callFunction(\"PutMesBubble\",e.message.content,players.x,players.y)",
+										"        console.log(\"PutMesBubble\")",
+										"        }",
+										"\t}",
+										"      ",
+										"  }",
+										"",
+										"});"
+									]
+								}
+							],
+							"sid": 274831054282672,
+							"disabled": true
+						}
+					],
+					"sid": 661199097347358
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ClientPlayer",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Input",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 979428326100195,
+											"parameters": {
+												"key": 65
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "send-message",
+											"objectClass": "Mul",
+											"sid": 534749788650314,
+											"parameters": {
+												"peer-id": "Mul.HostID",
+												"tag": "\"player:move:left\"",
+												"message": "\"\"",
+												"mode": "reliable-ordered"
+											}
+										}
+									],
+									"sid": 439369452382453
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 129761224150099,
+											"parameters": {
+												"key": 68
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "send-message",
+											"objectClass": "Mul",
+											"sid": 330353618109453,
+											"parameters": {
+												"peer-id": "Mul.HostID",
+												"tag": "\"player:move:right\"",
+												"message": "\"\"",
+												"mode": "reliable-ordered"
+											}
+										}
+									],
+									"sid": 245139808398881
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 384162509896563,
+											"parameters": {
+												"key": 87
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "send-message",
+											"objectClass": "Mul",
+											"sid": 920018839022580,
+											"parameters": {
+												"peer-id": "Mul.HostID",
+												"tag": "\"player:move:up\"",
+												"message": "\"\"",
+												"mode": "reliable-ordered"
+											}
+										}
+									],
+									"sid": 417769909540701
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 309753458473511,
+											"parameters": {
+												"key": 83
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "send-message",
+											"objectClass": "Mul",
+											"sid": 314293401215652,
+											"parameters": {
+												"peer-id": "Mul.HostID",
+												"tag": "\"player:move:down\"",
+												"message": "\"\"",
+												"mode": "reliable-ordered"
+											}
+										}
+									],
+									"sid": 264415414926701
+								}
+							],
+							"sid": 894167788391909
+						}
+					],
+					"sid": 271871822899099
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ClientPeerEnter",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "Player",
+									"sid": 648703378146057
+								}
+							],
+							"actions": [
+								{
+									"id": "set-ignoring-input",
+									"objectClass": "Player",
+									"sid": 365324782874151,
+									"behaviorType": "8方向",
+									"parameters": {
+										"input": "start-ignoring"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Player",
+									"sid": 698235140921616,
+									"behaviorType": "视野跟随",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player",
+									"sid": 173660374324438,
+									"parameters": {
+										"instance-variable": "IDstring",
+										"value": "Mul.PeerID"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player",
+									"sid": 137155112342741,
+									"parameters": {
+										"instance-variable": "ID",
+										"value": "Mul.PeerID"
+									}
+								}
+							],
+							"sid": 116636134970657
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 222490847025531,
+									"parameters": {
+										"instance-variable": "IDstring",
+										"comparison": 0,
+										"value": "Mul.MyID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Player",
+									"sid": 735676359288507,
+									"behaviorType": "视野跟随",
+									"parameters": {
+										"state": "enabled"
+									}
+								}
+							],
+							"sid": 395062546541311
+						}
+					],
+					"sid": 374198462740976
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ClientHandler",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [],
+					"sid": 297672503301800
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Client_PlayerNameText",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "text_playerName",
+									"sid": 360120717132945
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "text_playerName",
+									"sid": 163003831943667,
+									"parameters": {
+										"text": "Mul.PeerAlias"
+									}
+								},
+								{
+									"id": "move-to-layer",
+									"objectClass": "text_playerName",
+									"sid": 978516588418065,
+									"parameters": {
+										"layer": "\"UI\""
+									}
+								}
+							],
+							"sid": 654442878778397
+						}
+					],
+					"sid": 902798447536272
+				}
+			],
+			"sid": 861531943092843
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "OnlyClient",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ClientWorld",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "ClientSort",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "F_Body",
+											"sid": 660078725951844
+										}
+									],
+									"actions": [
+										{
+											"id": "move-to-layer",
+											"objectClass": "F_Body",
+											"sid": 398848886273697,
+											"parameters": {
+												"layer": "\"实体\""
+											}
+										}
+									],
+									"sid": 210087939214547
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "F_World",
+											"sid": 424401958477680
+										}
+									],
+									"actions": [
+										{
+											"id": "move-to-layer",
+											"objectClass": "F_World",
+											"sid": 519129705314358,
+											"parameters": {
+												"layer": "\"地图\""
+											}
+										}
+									],
+									"sid": 405569827852470
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "groundput",
+											"sid": 836841193500439
+										}
+									],
+									"actions": [
+										{
+											"id": "move-to-layer",
+											"objectClass": "groundput",
+											"sid": 517974343140111,
+											"parameters": {
+												"layer": "\"地图\""
+											}
+										}
+									],
+									"sid": 133615839484835
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 671876105227972
+										}
+									],
+									"actions": [
+										{
+											"id": "move-to-object",
+											"objectClass": "PhotoBoxImage",
+											"sid": 243828713870757,
+											"parameters": {
+												"where": "in-front",
+												"object": "WallImagePut"
+											}
+										}
+									],
+									"sid": 285125319432163
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 996220865856852
+										}
+									],
+									"actions": [
+										{
+											"id": "move-to-object",
+											"objectClass": "F_Photo",
+											"sid": 252095810286390,
+											"parameters": {
+												"where": "behind",
+												"object": "PhotoBoxImage"
+											}
+										},
+										{
+											"id": "move-to-object",
+											"objectClass": "F_Photo",
+											"sid": 476453351279895,
+											"parameters": {
+												"where": "in-front",
+												"object": "WallImagePut"
+											}
+										}
+									],
+									"sid": 235405072902579
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 388316006902166
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "F_Ysort",
+											"sid": 899401719469214,
+											"parameters": {
+												"instance-variable": "ThisY",
+												"value": "Self.Y"
+											}
+										},
+										{
+											"id": "sort-z-order",
+											"objectClass": "System",
+											"sid": 235519571161882,
+											"parameters": {
+												"object": "F_Ysort",
+												"instance-variable": {
+													"name": "ThisY",
+													"objectClass": "F_Ysort"
+												}
+											}
+										}
+									],
+									"sid": 578509703205828
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "F_Body",
+											"sid": 871182448438313
+										}
+									],
+									"actions": [
+										{
+											"id": "move-to-top",
+											"objectClass": "F_Body",
+											"sid": 618458097263499
+										}
+									],
+									"sid": 146796840029078
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "F_UI",
+											"sid": 889643193705162
+										}
+									],
+									"actions": [
+										{
+											"id": "move-to-layer",
+											"objectClass": "F_UI",
+											"sid": 876736636885739,
+											"parameters": {
+												"layer": "\"UI\""
+											}
+										}
+									],
+									"sid": 705187312889681
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "F_UIText",
+											"sid": 121739070619989
+										}
+									],
+									"actions": [
+										{
+											"id": "move-to-layer",
+											"objectClass": "F_UIText",
+											"sid": 986908166948622,
+											"parameters": {
+												"layer": "\"UI\""
+											}
+										}
+									],
+									"sid": 908866192625825
+								}
+							],
+							"sid": 728498971155626
+						}
+					],
+					"sid": 572879702092232
+				}
+			],
+			"sid": 972016926062896
+		}
+	],
+	"sid": 469805104440437
+}

@@ -1,0 +1,104 @@
+{
+	"name": "Player",
+	"plugin-id": "Sprite",
+	"sid": 853053102954984,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "ID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 686078411449186
+		},
+		{
+			"name": "Name",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 700197795791359
+		},
+		{
+			"name": "HP",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 588205338858572
+		},
+		{
+			"name": "Speed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 620559086996071
+		},
+		{
+			"name": "EX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 419417365749904
+		},
+		{
+			"name": "IDstring",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 262641518990333
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "EightDir",
+			"name": "8方向",
+			"sid": 214034242246716
+		},
+		{
+			"behaviorId": "scrollto",
+			"name": "视野跟随",
+			"sid": 399954086515083
+		},
+		{
+			"behaviorId": "MoveTo",
+			"name": "移动到",
+			"sid": 981312152963202
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "MoveSine",
+			"sid": 478133366527006
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 133,
+						"height": 206,
+						"originX": 0.5263157894736842,
+						"originY": 0.9854368932038835,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7549347,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 134314834737732,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

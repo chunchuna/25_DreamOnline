@@ -1,0 +1,433 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 43500,
+	"name": "24_dreamol",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Button",
+			"name": "按钮",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "键盘",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "鼠标",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Multiplayer",
+			"name": "多人联机",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "精灵",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "文本",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TextBox",
+			"name": "输入框",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "平铺图",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "EightDir",
+			"name": "八方向",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "MoveTo",
+			"name": "移动到",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "正弦运动",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "镜头跟随",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "实体",
+			"author": "Scirra",
+			"bundled": false
+		}
+	],
+	"uniqueId": "d3njncvcwix",
+	"objectTypes": {
+		"items": [
+			"EventHandler"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"Player",
+					"Wall",
+					"image",
+					"image2",
+					"ground",
+					"groundput",
+					"PhotoBoxImage",
+					"WallIamge",
+					"WallImagePut"
+				],
+				"subfolders": [],
+				"name": "Sprites"
+			},
+			{
+				"items": [
+					"UI_登陆按钮",
+					"text_playerName",
+					"GuideInputNameText",
+					"NameLable",
+					"ClientChatBox",
+					"ChatBubble",
+					"ChatBubbleText"
+				],
+				"subfolders": [],
+				"name": "Text"
+			},
+			{
+				"items": [
+					"Keyboard",
+					"Mul",
+					"ContentTextInstance",
+					"Mouse"
+				],
+				"subfolders": [],
+				"name": "Addon"
+			},
+			{
+				"items": [
+					"a15b7adec95423a98d29ae039fb9e1d",
+					"bda0bfe9fa9745509f7535b75e0f",
+					"c0b3810d6a29ac8a",
+					"e8df7736d914b35b13e6ae526470cd",
+					"fe79c8ea624a37a4b91a01d018be"
+				],
+				"subfolders": [],
+				"name": "photo"
+			}
+		]
+	},
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [
+			"F_Body",
+			"F_World",
+			"F_Sync",
+			"F_Syncput",
+			"F_SyncText",
+			"F_Ysort",
+			"F_Photo",
+			"F_UI",
+			"F_UIText"
+		],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"客户端游戏场景",
+					"客户端登陆场景"
+				],
+				"subfolders": [],
+				"name": "客户端"
+			},
+			{
+				"items": [
+					"服务器游戏场景"
+				],
+				"subfolders": [],
+				"name": "服务器"
+			},
+			{
+				"items": [
+					"精灵"
+				],
+				"subfolders": [],
+				"name": "全局"
+			}
+		]
+	},
+	"eventSheets": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"客户端游戏",
+					"客户端登陆"
+				],
+				"subfolders": [],
+				"name": "客户端"
+			},
+			{
+				"items": [
+					"服务器游戏"
+				],
+				"subfolders": [],
+				"name": "服务器"
+			},
+			{
+				"items": [
+					"全局变量"
+				],
+				"subfolders": [],
+				"name": "全局"
+			}
+		]
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [
+				{
+					"name": "main.ts",
+					"type": "application/typescript",
+					"sid": 175874183107909,
+					"script-info": {
+						"purpose": "main"
+					}
+				},
+				{
+					"name": "Utils.ts",
+					"type": "application/typescript",
+					"sid": 445379705299205,
+					"script-info": {
+						"purpose": "imports-for-events"
+					}
+				},
+				{
+					"name": "Engine.ts",
+					"type": "application/typescript",
+					"sid": 770976520176463,
+					"script-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": [
+				{
+					"items": [],
+					"subfolders": [
+						{
+							"items": [
+								{
+									"name": "DRMOLClientGame.ts",
+									"type": "application/typescript",
+									"sid": 634837653067116,
+									"script-info": {
+										"purpose": "none"
+									}
+								}
+							],
+							"subfolders": [],
+							"name": "Client"
+						}
+					],
+					"name": "Moudle"
+				}
+			],
+			"autoReloadOnPreview": true
+		},
+		"sound": {
+			"items": [],
+			"subfolders": []
+		},
+		"music": {
+			"items": [],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 696759487365831,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 177379326709736,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 735833558148026,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 946320124719519,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 714554012714489,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 124199275893126,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 981772457848609,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [
+			"时间轴 1"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"flowcharts": {
+		"items": [],
+		"subfolders": []
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"autoIncrementVersion": false,
+		"author": "",
+		"authorEmail": "",
+		"authorWebsite": "",
+		"appId": "",
+		"pixelRounding": true,
+		"zAxisScale": "normalized",
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": false,
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "low",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "landscape",
+		"webgpu": "auto",
+		"gpuPreference": "high-performance",
+		"scriptsType": "module",
+		"framerateMode": "vsync",
+		"sampling": "nearest",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"zNear": 1,
+		"zFar": 10000,
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "splash",
+		"preloadSounds": true,
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https",
+		"exportFileStructure": "folders",
+		"uidAllocationMode": "increment"
+	},
+	"viewportWidth": 1920,
+	"viewportHeight": 1080,
+	"firstLayout": "客户端登陆场景"
+}

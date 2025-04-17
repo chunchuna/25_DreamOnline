@@ -1,0 +1,12 @@
+{
+	"name": "F_Syncput",
+	"plugin-id": "TiledBg",
+	"sid": 270079890993942,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"WallImagePut",
+		"groundput"
+	]
+}

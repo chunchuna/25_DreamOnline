@@ -5,7 +5,56 @@
 			"name": "地面",
 			"overriden": 0,
 			"subLayers": [],
-			"instances": [],
+			"instances": [
+				{
+					"type": "groundput",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 116,
+					"sid": 662899062335055,
+					"tags": "",
+					"instanceVariables": {
+						"Layer_": 0,
+						"z_": 0,
+						"width_": 0,
+						"height_": 0
+					},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 7485,
+						"y": 2332,
+						"width": 5459,
+						"height": 721,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
 			"sid": 206555616564364,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
@@ -98,7 +147,9 @@
 					"tags": "",
 					"instanceVariables": {
 						"Layer_": 0,
-						"z_": 0
+						"z_": 0,
+						"width_": 0,
+						"height_": 0
 					},
 					"behaviors": {
 						"实体": {
@@ -156,52 +207,6 @@
 						"height": 273.89521086425674,
 						"originX": 0.5,
 						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "groundput",
-					"properties": {
-						"initially-visible": true,
-						"origin": "top-left",
-						"wrap-horizontal": "repeat",
-						"wrap-vertical": "repeat",
-						"image-offset-x": 0,
-						"image-offset-y": 0,
-						"image-scale-x": 1,
-						"image-scale-y": 1,
-						"image-angle": 0,
-						"enable-tile-randomization": false,
-						"x-random": 1,
-						"y-random": 1,
-						"angle-random": 1,
-						"blend-margin-x": 0.1,
-						"blend-margin-y": 0.1
-					},
-					"uid": 116,
-					"sid": 662899062335055,
-					"tags": "",
-					"instanceVariables": {
-						"Layer_": 0,
-						"z_": 0
-					},
-					"behaviors": {},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 7485,
-						"y": 2332,
-						"width": 5459,
-						"height": 721,
-						"originX": 0,
-						"originY": 0,
 						"color": [
 							1,
 							1,
@@ -275,7 +280,9 @@
 					"tags": "",
 					"instanceVariables": {
 						"Layer_": 0,
-						"z_": 0
+						"z_": 0,
+						"width_": 0,
+						"height_": 0
 					},
 					"behaviors": {
 						"实体": {
@@ -328,7 +335,9 @@
 					"tags": "",
 					"instanceVariables": {
 						"Layer_": 0,
-						"z_": 0
+						"z_": 0,
+						"width_": 0,
+						"height_": 0
 					},
 					"behaviors": {
 						"实体": {
@@ -388,7 +397,9 @@
 					"tags": "",
 					"instanceVariables": {
 						"Layer_": 0,
-						"z_": 0
+						"z_": 0,
+						"width_": 0,
+						"height_": 0
 					},
 					"behaviors": {
 						"实体": {

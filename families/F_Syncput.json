@@ -16,6 +16,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 906651554531670
+		},
+		{
+			"name": "width_",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 578628930173657
+		},
+		{
+			"name": "height_",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 118260507107657
 		}
 	],
 	"behaviorTypes": [],

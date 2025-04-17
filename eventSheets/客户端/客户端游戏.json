@@ -173,9 +173,9 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-created",
-									"objectClass": "F_Sync",
-									"sid": 974502051088151
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 218940074995069
 								}
 							],
 							"actions": [
@@ -183,6 +183,15 @@
 									"id": "set-size",
 									"objectClass": "F_Sync",
 									"sid": 598989857938538,
+									"parameters": {
+										"width": "Self.width_",
+										"height": "Self.height_"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "F_Syncput",
+									"sid": 262067998789283,
 									"parameters": {
 										"width": "Self.width_",
 										"height": "Self.height_"
@@ -197,10 +206,22 @@
 									}
 								},
 								{
+									"id": "move-to-layer",
+									"objectClass": "F_Syncput",
+									"sid": 654954027216618,
+									"parameters": {
+										"layer": "Self.Layer_"
+									}
+								},
+								{
 									"type": "script",
 									"language": "typescript",
 									"script": [
 										"for(let SyncObjects of runtime.objects.F_Sync.instances()){",
+										"  SyncObjects.zElevation=SyncObjects.instVars.z_;",
+										"  console.log(SyncObjects)",
+										"}",
+										"for(let SyncObjects of runtime.objects.F_Syncput.instances()){",
 										"  SyncObjects.zElevation=SyncObjects.instVars.z_;",
 										"  console.log(SyncObjects)",
 										"}"

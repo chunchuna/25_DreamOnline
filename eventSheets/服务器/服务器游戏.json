@@ -337,6 +337,66 @@
 									}
 								},
 								{
+									"id": "sync-instance-variable",
+									"objectClass": "Mul",
+									"sid": 418143942112515,
+									"parameters": {
+										"object": "F_Syncput",
+										"instance-variable": {
+											"name": "Layer_",
+											"objectClass": "F_Syncput"
+										},
+										"precision": "normal-float-4-bytes",
+										"interpolation": "none",
+										"client-value-tag": "\"\""
+									}
+								},
+								{
+									"id": "sync-instance-variable",
+									"objectClass": "Mul",
+									"sid": 580921822178685,
+									"parameters": {
+										"object": "F_Syncput",
+										"instance-variable": {
+											"name": "z_",
+											"objectClass": "F_Syncput"
+										},
+										"precision": "normal-float-4-bytes",
+										"interpolation": "none",
+										"client-value-tag": "\"\""
+									}
+								},
+								{
+									"id": "sync-instance-variable",
+									"objectClass": "Mul",
+									"sid": 471302030214928,
+									"parameters": {
+										"object": "F_Syncput",
+										"instance-variable": {
+											"name": "height_",
+											"objectClass": "F_Syncput"
+										},
+										"precision": "normal-float-4-bytes",
+										"interpolation": "none",
+										"client-value-tag": "\"\""
+									}
+								},
+								{
+									"id": "sync-instance-variable",
+									"objectClass": "Mul",
+									"sid": 529149611890748,
+									"parameters": {
+										"object": "F_Syncput",
+										"instance-variable": {
+											"name": "width_",
+											"objectClass": "F_Syncput"
+										},
+										"precision": "normal-float-4-bytes",
+										"interpolation": "none",
+										"client-value-tag": "\"\""
+									}
+								},
+								{
 									"id": "sync-object",
 									"objectClass": "Mul",
 									"sid": 151059809960669,
@@ -503,19 +563,64 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "F_Sync",
-									"sid": 750496317746258,
+									"sid": 415125140913448,
 									"parameters": {
-										"instance-variable": "y_",
-										"value": "Self.Y"
+										"instance-variable": "Layer",
+										"value": "Self.LayerNumber"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "F_Syncput",
+									"sid": 404698147580841,
+									"parameters": {
+										"instance-variable": "z_",
+										"value": "Self.ZIndex"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "F_Syncput",
+									"sid": 681168021010817,
+									"parameters": {
+										"instance-variable": "Layer_",
+										"value": "Self.LayerNumber"
 									}
 								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "F_Sync",
-									"sid": 930314806183289,
+									"sid": 826364043166825,
 									"parameters": {
-										"instance-variable": "Layer",
-										"value": "Self.LayerName"
+										"instance-variable": "height_",
+										"value": "Self.Height"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "F_Sync",
+									"sid": 944661604699038,
+									"parameters": {
+										"instance-variable": "width_",
+										"value": "Self.Width"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "F_Syncput",
+									"sid": 340479504804109,
+									"parameters": {
+										"instance-variable": "height_",
+										"value": "Self.Height"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "F_Syncput",
+									"sid": 693300670347529,
+									"parameters": {
+										"instance-variable": "width_",
+										"value": "Self.Width"
 									}
 								}
 							],

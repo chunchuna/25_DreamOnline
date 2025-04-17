@@ -133,6 +133,68 @@
 									"sid": 605571769912147
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-peer-disconnected",
+									"objectClass": "Mul",
+									"sid": 560468183807133
+								}
+							],
+							"actions": [],
+							"sid": 132394524744911,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 148701818453584,
+											"parameters": {
+												"object": "Player",
+												"expression": "Player.IDstring",
+												"comparison": 0,
+												"value": "Mul.PeerID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "Player",
+											"sid": 714524566810841
+										}
+									],
+									"sid": 297421338552823
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-peer-connected",
+									"objectClass": "Mul",
+									"sid": 291032976525832
+								}
+							],
+							"actions": [],
+							"sid": 401817358674890
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-kicked",
+									"objectClass": "Mul",
+									"sid": 922698815397755
+								}
+							],
+							"actions": [],
+							"sid": 493934401298264
 						}
 					],
 					"sid": 260978554108204

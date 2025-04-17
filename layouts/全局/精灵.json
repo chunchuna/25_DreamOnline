@@ -492,17 +492,17 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 252,
-						"y": 163,
-						"width": 363.4550725242251,
-						"height": 237.23427327941056,
+						"x": 122,
+						"y": 60,
+						"width": 158.06249162044344,
+						"height": 103.17049662254885,
 						"originX": 0.5774058577405857,
 						"originY": 0.9935897435897436,
 						"color": [
 							1,
 							1,
 							1,
-							1
+							0.6
 						],
 						"angle": 0,
 						"zElevation": 0
@@ -524,7 +524,7 @@
 							0,
 							1
 						],
-						"horizontal-alignment": "center",
+						"horizontal-alignment": "left",
 						"vertical-alignment": "top",
 						"wrapping": "character",
 						"text-direction": "ltr",
@@ -569,10 +569,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 83,
-						"y": -37,
-						"width": 275,
-						"height": 87,
+						"x": 38,
+						"y": -38,
+						"width": 139,
+						"height": 67,
 						"originX": 0,
 						"originY": 0,
 						"color": [

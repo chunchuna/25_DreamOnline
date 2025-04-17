@@ -24,7 +24,7 @@ pmlsdk$ProceduralStorytellingSandboxRPGDevelopmentToolkit.gl$_ubu_init(() => {
                 //@ts-ignore
                 if (players.instVars.IDstring == e.message.id) {
                     //@ts-ignore
-                    pmlsdk$ProceduralStorytellingSandboxRPGDevelopmentToolkit.RUN_TIME_.callFunction("PutMesBubble", e.message.mes, players.x, players.y)
+                    pmlsdk$ProceduralStorytellingSandboxRPGDevelopmentToolkit.RUN_TIME_.callFunction("PutMesBubble", e.message.mes, players.x, players.y-players.height/2)
                     console.log("PutMesBubble")
                 }
             }

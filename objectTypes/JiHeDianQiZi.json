@@ -1,7 +1,7 @@
 {
-	"name": "ground",
+	"name": "JiHeDianQiZi",
 	"plugin-id": "Sprite",
-	"sid": 372800524630009,
+	"sid": 657526412348513,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
@@ -12,21 +12,21 @@
 			{
 				"frames": [
 					{
-						"width": 239,
-						"height": 111,
+						"width": 64,
+						"height": 79,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 4837470,
+						"imageSpriteId": 2670652,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 596924947496551,
+				"sid": 916820951689757,
 				"name": "Default",
 				"isLooping": false,
 				"isPingPong": false,

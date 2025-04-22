@@ -1,5 +1,5 @@
 {
-	"name": "groundput",
+	"name": "FeiZhouCaoYuan",
 	"plugin-id": "TiledBg",
 	"sid": 752478861223951,
 	"isGlobal": false,
@@ -8,15 +8,15 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
-		"width": 1080,
-		"height": 861,
+		"width": 1408,
+		"height": 768,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"fileType": "image/png",
-		"imageSpriteId": 5965139,
+		"fileType": "image/jpeg",
+		"imageSpriteId": 1434974,
 		"useCollisionPoly": true,
 		"tag": ""
 	}

@@ -669,14 +669,14 @@
 									"conditions": [
 										{
 											"id": "on-created",
-											"objectClass": "groundput",
+											"objectClass": "FeiZhouCaoYuan",
 											"sid": 836841193500439
 										}
 									],
 									"actions": [
 										{
 											"id": "move-to-layer",
-											"objectClass": "groundput",
+											"objectClass": "FeiZhouCaoYuan",
 											"sid": 517974343140111,
 											"parameters": {
 												"layer": "\"地图\""

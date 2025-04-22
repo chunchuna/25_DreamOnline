@@ -100,14 +100,17 @@
 	],
 	"uniqueId": "d3njncvcwix",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"JiHeDianQiZi",
+			"FeiZhouDashu"
+		],
 		"subfolders": [
 			{
 				"items": [
 					"Player",
 					"Wall",
 					"ground",
-					"groundput",
+					"FeiZhouCaoYuan",
 					"PhotoBoxImage",
 					"WallIamge",
 					"WallImagePut",
